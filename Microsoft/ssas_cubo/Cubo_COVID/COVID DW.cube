@@ -1,0 +1,781 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="733188e9-fc52-4652-a7b8-d368f5ebf2f7" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>COVID DW</ID>
+  <Name>COVID DW</Name>
+  <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="16" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-4113" scrolltop="4286" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="14870" y="12621" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="1" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01010000900180380100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="FactCovidDiario" left="668" top="7242" logicalid="8" controlid="1" masterid="0" hint1="0" hint2="0" width="3572" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000f40d000088130000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_FactCovidDiario" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimIndicadorAnual" left="100" top="-1084" logicalid="9" controlid="2" masterid="0" hint1="0" hint2="0" width="4868" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e000004130000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimIndicadorAnual" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimTiempo" left="629" top="14642" logicalid="10" controlid="3" masterid="0" hint1="0" hint2="0" width="3651" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000430e0000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimTiempo" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimPais" left="6640" top="8379" logicalid="11" controlid="4" masterid="0" hint1="0" hint2="0" width="3000" height="2725" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e0000b80b0000a50a0000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimPais" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="485" top="3259" logicalid="12" controlid="5" masterid="0" hint1="0" hint2="0" width="799" height="4283" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__FactCovid__Indic__6754599E]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="2" destid="1" sourceattachpoint="3" destattachpoint="0" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="884" y="3758" />
+              <point x="884" y="6095" />
+              <point x="804" y="6095" />
+              <point x="804" y="7242" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="2055" top="11942" logicalid="13" controlid="6" masterid="0" hint1="0" hint2="0" width="799" height="3200" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__FactCovid__Fecha__656C112C]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="3" destid="1" sourceattachpoint="6" destattachpoint="7" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="2454" y="14642" />
+              <point x="2454" y="12242" />
+            </connector>
+          </ddscontrol>
+          <ddscontrol controlprogid="MSDDS.Polyline.080.1" left="3940" top="9342" logicalid="14" controlid="7" masterid="0" hint1="0" hint2="0" width="3000" height="799" noresize="0" nomove="0" nodefaultattachpoints="1" autodrag="0" usedefaultiddshape="0" selectable="1" showselectionhandles="0" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobj>
+                <polyline endtypedst="6" endtypesrc="3" usercolor="16448250" linestyle="0" linerender="1" customendtypedstid="0" customendtypesrcid="0" adornsvisible="1" />
+              </ddsxmlobj>
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dataSet.Relations[FK__FactCovid__PaisK__66603565]" vartype="8" />
+                <property name="Virtual" value="0" vartype="11" />
+                <property name="VisibleAP" value="0" vartype="3" />
+              </ddsxmlobj>
+            </layoutobject>
+            <connector lineroutestyle="MSDDS.Rectilinear" sourceid="4" destid="1" sourceattachpoint="14" destattachpoint="23" segmenteditmode="0" bendpointeditmode="0" bendpointvisibility="0" relatedid="0" virtual="0">
+              <point x="6640" y="9741" />
+              <point x="5440" y="9741" />
+              <point x="5440" y="9742" />
+              <point x="4240" y="9742" />
+            </connector>
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-4113</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>4286</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>100</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>-1084</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="0fd94d8f-4852-4c25-a681-f55fd1900d0f">
+      <ID>Dim Indicador Anual</ID>
+      <Name>Dim Indicador Anual</Name>
+      <DimensionID>Dim Indicador Anual</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="927a968c-442d-4a03-a92a-616c90110c37">
+          <AttributeID>Indicador Anual Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cba549b7-f343-40d2-9d79-3413507607d1">
+          <AttributeID>Indicador Anual Key 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="09ab941b-3ab1-448c-a4a3-96066f63525d">
+          <AttributeID>Nombre Pais</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="e0303b90-b422-44ab-8a1c-46e131f8fc15">
+          <AttributeID>Anio</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ccfc32b9-a203-4eb8-9928-966a00948b43">
+          <AttributeID>Poblacion</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d948bc45-dc94-4567-ba8d-a25a70fa0b4f">
+          <AttributeID>Pib Per Capita</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="89c6f1ef-2f6c-49ad-b382-aa6c00aac640">
+          <AttributeID>Prevalencia Diabetes</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="6e8f354a-af6b-4a87-b9a0-a8605586ab81">
+          <AttributeID>Extrema Pobreza</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="171f4058-d489-41d0-98b9-12e764f83f75">
+          <AttributeID>Tasa Muerte Cardiovasculares</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="d7abf742-cdb2-4352-b19e-8532f9e293ec">
+          <AttributeID>Facilidades Lavado Manos</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c7e2e3f6-12d4-45d5-b5d7-99290fd4acb4">
+      <ID>Dim Tiempo</ID>
+      <Name>Dim Tiempo</Name>
+      <DimensionID>Dim Tiempo</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="85cdeedf-36e3-4bdc-83c3-ae270ab627d3">
+          <AttributeID>Fecha Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4cd0723c-b15e-4ee1-878a-11e1d46694f6">
+          <AttributeID>Fecha Key 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="2d081fef-b3c6-4382-87f2-7e6645c17d93">
+          <AttributeID>Fecha</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5d799cde-c506-4e1d-8c5b-414728959c8b">
+          <AttributeID>Anio</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="3b55ab77-e3c6-4244-a6f9-25e645c38254">
+          <AttributeID>Mes</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="555a8582-7dc7-4a45-8d89-a19f6c5c3cdb">
+          <AttributeID>Dia</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="50961196-4e84-40f2-beb3-de1de8554821">
+          <AttributeID>Nombre Mes</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="51f3c9f0-cdc4-4938-8bb8-3445032c44db">
+          <AttributeID>Trimestre</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="81463ad7-1200-4c49-876d-3dc9b1f9c41f">
+          <AttributeID>Semana Anio</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="5f419fc5-2d85-45c8-b86d-27e22ce38227">
+          <AttributeID>Nombre Dia Semana</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b468401f-3427-4a08-9045-1feb5317417f">
+          <AttributeID>Anio Mes</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="bbd15dad-a7c2-4436-9c17-47b506431414">
+          <HierarchyID>Jerarquía</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+    <Dimension dwd:design-time-name="0489fcb9-2826-40fa-a9c9-04fbd514128a">
+      <ID>Dim Pais</ID>
+      <Name>Dim Pais</Name>
+      <DimensionID>Dim Pais</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9eab1da1-7d7d-4d96-b771-4edbc4523f09">
+          <AttributeID>Pais Key</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0cf4f761-2239-4b3d-8e80-d8a3af15dc4e">
+          <AttributeID>Pais Key 1</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="0dcfa82d-f659-4260-a6a6-54616710c9e8">
+          <AttributeID>Nombre Pais</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="50522cb8-fd3a-4925-a0c6-bf64114b83c6">
+          <AttributeID>Codigo Pais</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="cb64dd89-8406-448e-a216-f9cd1f18a0c1">
+          <AttributeID>Region</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="2ae37765-a256-46e3-8d4c-5ab8f6581316">
+          <HierarchyID>Jerarquía</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="72a26bed-04c9-4ede-a6f7-3ea8aeaf4361">
+      <ID>Fact Covid Diario</ID>
+      <Name>Fact Covid Diario</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="84af6926-cd02-4296-a13f-c88cec90eef4">
+          <ID>Casos Confirmados</ID>
+          <Name>Casos Confirmados</Name>
+          <AggregateFunction>LastNonEmpty</AggregateFunction>
+          <Source dwd:design-time-name="f1bfa0f2-2108-44c7-903c-7c29232386e5">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="2a6e128e-d1d9-4832-8963-88c09680ae32">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>CasosConfirmados</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="62a100b7-5987-4e2a-a1bf-b3e19d03254d">
+          <ID>Muertes</ID>
+          <Name>Muertes</Name>
+          <AggregateFunction>LastNonEmpty</AggregateFunction>
+          <Source dwd:design-time-name="ca18a7b5-907c-421d-a823-468e6a51d79b">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="47eb2eee-09f3-4769-8f32-8db47eff4fa7">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>Muertes</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c0312403-aa06-4b97-8225-dc04d968c16a">
+          <ID>Recuperados</ID>
+          <Name>Recuperados</Name>
+          <AggregateFunction>LastNonEmpty</AggregateFunction>
+          <Source dwd:design-time-name="695395ef-59c2-4e86-be19-ba0ef8b693d0">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="d94f7a12-22a2-4374-9d68-65ebb22bc05a">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>Recuperados</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="7c8a6c67-850e-4e2f-86da-864998635511">
+          <ID>Activos</ID>
+          <Name>Activos</Name>
+          <AggregateFunction>LastNonEmpty</AggregateFunction>
+          <Source dwd:design-time-name="4b102696-e085-4ec1-87b1-64f68ddc7266">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="22fd89c0-4526-441f-a202-8f8c77d36062">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>Activos</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="93393184-35bd-4c57-b749-551912e29d46">
+          <ID>Tasa Incidentes</ID>
+          <Name>Tasa Incidentes</Name>
+          <Source dwd:design-time-name="a785a2cf-e56e-4e6d-8b6c-fdfcbaf534e8">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="667d7677-35f3-4b16-8636-ac1714685b7a">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>TasaIncidentes</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="f3b0a9a1-f815-4470-9e44-c32c87e92966">
+          <ID>Tasa Fatalidad</ID>
+          <Name>Tasa Fatalidad</Name>
+          <Source dwd:design-time-name="7a2f360a-cde4-4dab-9a96-c96cd8d36143">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="ea2d7d78-b587-494f-aea6-8f8841d1ec4d">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>TasaFatalidad</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="d864c136-0fe4-46d0-9f99-afa39becd3ed">
+          <ID>Casos Nuevos</ID>
+          <Name>Casos Nuevos</Name>
+          <Source dwd:design-time-name="f4786ee7-6308-48ab-8008-8a2599f8e763">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="33f6a64a-718d-41bb-b1cd-862d7ced0ab9">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>CasosNuevos</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="caa2838a-eaeb-440f-aa49-7955f5c7c54c">
+          <ID>Muertes Nuevas</ID>
+          <Name>Muertes Nuevas</Name>
+          <Source dwd:design-time-name="cbeb2a11-7556-4555-8afd-457aa2cf77b0">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="e72a6929-8c5f-42e7-881f-b593d288d0fe">
+              <TableID>dbo_FactCovidDiario</TableID>
+              <ColumnID>MuertesNuevas</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="144c1ff1-4319-4563-b45e-810f4b20d0d6">
+          <ID>Recuento Fact Covid Diario</ID>
+          <Name>Recuento Fact Covid Diario</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="30225ea2-7eb1-4737-aba1-cc1a8bbc9f37">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="4072d102-a56c-4797-83c5-8eff1540aa89">
+              <TableID>dbo_FactCovidDiario</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9be04438-187c-4091-b0e2-28853693a31f">
+          <CubeDimensionID>Dim Indicador Anual</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="282d0a8c-2c60-4b72-8c1f-43ac136249e7">
+              <AttributeID>Indicador Anual Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6990d481-68b9-497c-aafe-fc5720421891">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="74c65c20-08ff-424f-8a8c-53f7b210cf96">
+                    <TableID>dbo_FactCovidDiario</TableID>
+                    <ColumnID>IndicadorAnualKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="f3d3acfd-6835-45ca-a556-3d808fc5d27f">
+          <CubeDimensionID>Dim Tiempo</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="3bf00156-8f1e-4951-af9d-ce173d21debc">
+              <AttributeID>Fecha Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b9ab6050-0d77-45ea-af7d-7e29ada9e0c6">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="45198b04-7f7e-48f5-ab7c-5a5d0f0864e1">
+                    <TableID>dbo_FactCovidDiario</TableID>
+                    <ColumnID>FechaKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="3f3fe841-70fa-4a45-8c43-b9f85ce3e506">
+          <CubeDimensionID>Dim Pais</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="e2d8b194-e620-4948-a92c-e8010471bc69">
+              <AttributeID>Pais Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="9e081436-03f0-44c9-9847-76f278fe183d">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="ff6ee837-1b1b-4cf0-a87a-8dfdac5a65b0">
+                    <TableID>dbo_FactCovidDiario</TableID>
+                    <ColumnID>PaisKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="6a059e4a-b1c7-440b-9344-4b52b360ac34">
+      <ID>Dim Indicador Anual</ID>
+      <Name>Indicadores</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T06:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="69843627-f26b-4e2a-a36c-3c2a28915e21">
+          <ID>Poblacion</ID>
+          <Name>Poblacion</Name>
+          <AggregateFunction>LastNonEmpty</AggregateFunction>
+          <Source dwd:design-time-name="6b6f2cd7-9475-4c2e-8bc1-7768ea0b5b60">
+            <DataType>BigInt</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="81afde5a-42b3-46df-90ab-c25d45a4fac3">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+              <ColumnID>Poblacion</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="4eafe40a-a1ed-4fae-b079-6beabc0d17a8">
+          <ID>Pib Per Capita</ID>
+          <Name>Pib Per Capita</Name>
+          <Source dwd:design-time-name="022bfdbc-18aa-4717-9de6-cbc14ad9300d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="93f0ca7a-5c4b-4ad7-b1a7-a79bf496b173">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+              <ColumnID>PibPerCapita</ColumnID>
+            </Source>
+          </Source>
+          <Visible>false</Visible>
+        </Measure>
+        <Measure dwd:design-time-name="24bac508-8593-4e27-9011-a461e88c6508">
+          <ID>Prevalencia Diabetes</ID>
+          <Name>Prevalencia Diabetes</Name>
+          <Source dwd:design-time-name="4c5c07ab-f840-42df-9293-573dcb1aef2e">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="57bda5a6-2950-4b7a-879c-2475f5a18d37">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+              <ColumnID>PrevalenciaDiabetes</ColumnID>
+            </Source>
+          </Source>
+          <Visible>false</Visible>
+        </Measure>
+        <Measure dwd:design-time-name="ace2fdd2-b3cc-4504-bb7d-44681aa16675">
+          <ID>Extrema Pobreza</ID>
+          <Name>Extrema Pobreza</Name>
+          <Source dwd:design-time-name="e0fb3283-b4bc-4096-99e5-cb3a736fdd77">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="fa4619c0-f33b-442d-993d-7a2715dc3b84">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+              <ColumnID>ExtremaPobreza</ColumnID>
+            </Source>
+          </Source>
+          <Visible>false</Visible>
+        </Measure>
+        <Measure dwd:design-time-name="a3fe53b6-78e6-4701-978b-bb9e78701458">
+          <ID>Tasa Muerte Cardiovasculares</ID>
+          <Name>Tasa Muerte Cardiovasculares</Name>
+          <Source dwd:design-time-name="2ceed5ab-0cc8-4813-ba10-2e20a186098c">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="5def9454-a74b-4a8c-b76a-041af10ba99d">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+              <ColumnID>TasaMuerteCardiovasculares</ColumnID>
+            </Source>
+          </Source>
+          <Visible>false</Visible>
+        </Measure>
+        <Measure dwd:design-time-name="6de70ac2-6c67-4fc9-8347-c83c98ce69d8">
+          <ID>Facilidades Lavado Manos</ID>
+          <Name>Facilidades Lavado Manos</Name>
+          <Source dwd:design-time-name="18e92e25-6b28-4deb-b37c-c3c8f4ec4d1c">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="1a0eaa1b-04cc-4c09-be5e-e8cea534d666">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+              <ColumnID>FacilidadesLavadoManos</ColumnID>
+            </Source>
+          </Source>
+          <Visible>false</Visible>
+        </Measure>
+        <Measure dwd:design-time-name="7cd8375b-79c3-4e1b-b82a-d0e34bafa58f">
+          <ID>Indice Vulnerabilidad</ID>
+          <Name>Indice Vulnerabilidad Suma</Name>
+          <Source dwd:design-time-name="c39ab3e1-314e-43a7-9a8f-5eafd3bc2acd">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8c963ac8-4fc2-486d-84d1-b1acf42f0eef">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+              <ColumnID>IndiceVulnerabilidad</ColumnID>
+            </Source>
+          </Source>
+          <Visible>false</Visible>
+        </Measure>
+        <Measure dwd:design-time-name="61302e02-b511-4edd-a0c6-3df22470492e">
+          <ID>Recuento Dim Indicador Anual</ID>
+          <Name>Indicadores Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="2eb32e63-3668-4ab6-a0e5-f66783d44129">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="c4e6a318-728f-4c3b-bb49-cfb7f0b91288">
+              <TableID>dbo_DimIndicadorAnual</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="aba40b05-87ed-4e47-aec2-c5cbcbae8305">
+          <CubeDimensionID>Dim Pais</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="6632c9c7-fbfa-4de0-a1b3-722b53490c2e">
+              <AttributeID>Pais Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="84f35dad-18f3-42bf-b52a-3f7a730d87e9">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9d17bf2a-18dd-48e0-a8f3-29d2c4957719">
+                    <TableID>dbo_DimIndicadorAnual</TableID>
+                    <ColumnID>PaisKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="8f51304e-4404-4073-a2a7-492254be5f26">
+          <CubeDimensionID>Dim Tiempo</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="729e868d-f2d8-4f43-a37f-813d39988a59">
+              <AttributeID>Anio</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="bb19f6d0-8d48-4928-a023-87ac5670b46a">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="b2c84f6a-6f8c-434b-be64-b0a6a2d759e6">
+                    <TableID>dbo_DimIndicadorAnual</TableID>
+                    <ColumnID>Anio</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="51c8a42d-6e00-46db-a138-e7e7d2012f56">
+          <CubeDimensionID>Dim Indicador Anual</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ca1ffc4e-0d9c-471c-b642-730ac37d53d1">
+              <AttributeID>Indicador Anual Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="a6f108ab-2c36-44e2-a25b-9467c95523ea">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d9d21ee9-d2b7-40b6-a81e-0f3c95c19162">
+                    <TableID>dbo_DimIndicadorAnual</TableID>
+                    <ColumnID>IndicadorAnualKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="32e131ca-265c-4c65-83ad-faf0ca3db9a5">
+    <DataSourceViewID>COVID DW</DataSourceViewID>
+  </Source>
+  <MdxScripts>
+    <MdxScript dwd:design-time-name="59cd1756-8ba8-4f93-91f9-4f80e04ba494">
+      <ID>MdxScript</ID>
+      <Name>MdxScript</Name>
+      <CreatedTimestamp>0001-01-01T06:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T06:00:00Z</LastSchemaUpdate>
+      <Commands>
+        <Command>
+          <Text>/*
+El comando CALCULATE controla la agregación de celdas hoja en el cubo.
+Si se elimina o modifica el comando CALCULATE, se ven afectados los datos del cubo.
+Solo debe editar este comando si especifica manualmente cómo se agrega el cubo.
+*/
+CALCULATE; 
+CREATE MEMBER CURRENTCUBE.[Measures].IndiceVulnerabilidad
+ AS DIVIDE([Measures].[Indice Vulnerabilidad Suma], [Measures].[Indicadores Count]), 
+FORMAT_STRING = "#,##0.00;-#,##0.00", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Indicadores'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].MortalidadPorCienMil
+ AS DIVIDE([Measures].[Muertes], [Measures].[Poblacion]) * 100000, 
+FORMAT_STRING = "#,##0.00;-#,##0.00", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Covid Diario'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].IncidenciaPorCienMil
+ AS DIVIDE([Measures].[Casos Confirmados], [Measures].[Poblacion]) * 100000, 
+FORMAT_STRING = "#,##0.00;-#,##0.00", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Covid Diario'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].CrecimientoMensualCasos
+ AS IIF([Dim Tiempo].[Anio Mes].CurrentMember.Level.Ordinal = 0, NULL, 
+IIF(([Measures].[Casos Nuevos], [Dim Tiempo].[Anio Mes].CurrentMember.PrevMember) = 0, NULL, 
+([Measures].[Casos Nuevos] - ([Measures].[Casos Nuevos], [Dim Tiempo].[Anio Mes].CurrentMember.PrevMember)) / ([Measures].[Casos Nuevos], [Dim Tiempo].[Anio Mes].CurrentMember.PrevMember))), 
+FORMAT_STRING = "#,##0.00 %;-#,##0.00 %", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Covid Diario'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].TasaRecuperacion
+ AS DIVIDE([Measures].[Recuperados], [Measures].[Casos Confirmados]), 
+FORMAT_STRING = "#,##0.00 %;-#,##0.00 %", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Covid Diario'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].TasaCasosActivos
+ AS IIF([Measures].[Casos Confirmados] = 0, NULL, [Measures].[Activos] / [Measures].[Casos Confirmados]), 
+FORMAT_STRING = "#,##0.00 %;-#,##0.00 %", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Covid Diario'  ; 
+CREATE MEMBER CURRENTCUBE.[Measures].TasaFatalidadCalc
+ AS IIF([Measures].[Casos Confirmados] = 0, NULL, [Measures].[Muertes] / [Measures].[Casos Confirmados]), 
+FORMAT_STRING = "#,##0.00 %;-#,##0.00 %", 
+VISIBLE = 1 ,  ASSOCIATED_MEASURE_GROUP = 'Fact Covid Diario'  ; </Text>
+        </Command>
+      </Commands>
+    </MdxScript>
+  </MdxScripts>
+  <Kpis>
+    <Kpi dwd:design-time-name="4951b9af-e0e9-41d9-ba14-661b303e81fa">
+      <ID>KPI</ID>
+      <Name>KPI Fatalidad</Name>
+      <Value>[Measures].[TasaFatalidadCalc]</Value>
+      <Goal>([Measures].[TasaFatalidadCalc],
+ [Dim Pais].[Nombre Pais].DefaultMember,
+ [Dim Pais].[Region].DefaultMember)</Goal>
+      <Status>CASE
+ WHEN IsEmpty(KPIValue("KPI Fatalidad")) THEN NULL
+ WHEN KPIValue("KPI Fatalidad") &lt;= KPIGoal("KPI Fatalidad") THEN 1
+ WHEN KPIValue("KPI Fatalidad") &lt;= KPIGoal("KPI Fatalidad") * 1.25 THEN 0
+ ELSE -1
+END</Status>
+      <Trend>CASE
+ WHEN [Dim Tiempo].[Anio].CurrentMember.Level.Ordinal = 0 THEN 0
+ WHEN IsEmpty(([Measures].[TasaFatalidadCalc], [Dim Tiempo].[Anio].CurrentMember.PrevMember)) THEN 0
+ WHEN [Measures].[TasaFatalidadCalc] &gt; ([Measures].[TasaFatalidadCalc], [Dim Tiempo].[Anio].CurrentMember.PrevMember) * 1.10 THEN 1
+ WHEN [Measures].[TasaFatalidadCalc] &lt; ([Measures].[TasaFatalidadCalc], [Dim Tiempo].[Anio].CurrentMember.PrevMember) * 0.90 THEN -1
+ ELSE 0
+END</Trend>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Traffic Light</StatusGraphic>
+    </Kpi>
+    <Kpi dwd:design-time-name="eadfca1d-04f2-4d01-b654-f2b4c6d31216">
+      <ID>KPI 1</ID>
+      <Name>KPI Incidencia</Name>
+      <Value>[Measures].[IncidenciaPorCienMil]</Value>
+      <Goal>([Measures].[IncidenciaPorCienMil],
+ [Dim Pais].[Nombre Pais].DefaultMember,
+ [Dim Pais].[Region].DefaultMember)</Goal>
+      <Status>CASE
+ WHEN IsEmpty(KPIValue("KPI Incidencia")) THEN NULL
+ WHEN KPIValue("KPI Incidencia") &lt;= KPIGoal("KPI Incidencia") THEN 1
+ WHEN KPIValue("KPI Incidencia") &lt;= KPIGoal("KPI Incidencia") * 1.25 THEN 0
+ ELSE -1
+END</Status>
+      <Trend>CASE
+ WHEN [Dim Tiempo].[Anio].CurrentMember.Level.Ordinal = 0 THEN 0
+ WHEN IsEmpty(([Measures].[Casos Nuevos],
+               [Dim Tiempo].[Anio].CurrentMember.PrevMember)) THEN 0
+ WHEN [Measures].[Casos Nuevos] &gt;
+      ([Measures].[Casos Nuevos],
+       [Dim Tiempo].[Anio].CurrentMember.PrevMember) * 1.10 THEN 1
+ WHEN [Measures].[Casos Nuevos] &lt;
+      ([Measures].[Casos Nuevos],
+       [Dim Tiempo].[Anio].CurrentMember.PrevMember) * 0.90 THEN -1
+ ELSE 0
+END</Trend>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Traffic Light</StatusGraphic>
+    </Kpi>
+    <Kpi dwd:design-time-name="d44c10fc-cf99-4c47-92c8-a2828f2ae169">
+      <ID>KPI 2</ID>
+      <Name>KPI Mortalidad</Name>
+      <Value>[Measures].[MortalidadPorCienMil]</Value>
+      <Goal>([Measures].[MortalidadPorCienMil],
+ [Dim Pais].[Nombre Pais].DefaultMember,
+ [Dim Pais].[Region].DefaultMember)</Goal>
+      <Status>CASE
+ WHEN IsEmpty(KPIValue("KPI Mortalidad")) THEN NULL
+ WHEN KPIValue("KPI Mortalidad") &lt;= KPIGoal("KPI Mortalidad") THEN 1
+ WHEN KPIValue("KPI Mortalidad") &lt;= KPIGoal("KPI Mortalidad") * 1.25 THEN 0
+ ELSE -1
+END</Status>
+      <Trend>CASE
+ WHEN [Dim Tiempo].[Anio].CurrentMember.Level.Ordinal = 0 THEN 0
+ WHEN IsEmpty(([Measures].[Muertes Nuevas],
+               [Dim Tiempo].[Anio].CurrentMember.PrevMember)) THEN 0
+ WHEN [Measures].[Muertes Nuevas] &gt;
+      ([Measures].[Muertes Nuevas],
+       [Dim Tiempo].[Anio].CurrentMember.PrevMember) * 1.10 THEN 1
+ WHEN [Measures].[Muertes Nuevas] &lt;
+      ([Measures].[Muertes Nuevas],
+       [Dim Tiempo].[Anio].CurrentMember.PrevMember) * 0.90 THEN -1
+ ELSE 0
+END</Trend>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Traffic Light</StatusGraphic>
+    </Kpi>
+    <Kpi dwd:design-time-name="696578fb-6a1b-4511-94b2-f23cc6da17a4">
+      <ID>KPI 3</ID>
+      <Name>KPI Variacion Mensual</Name>
+      <Value>[Measures].[CrecimientoMensualCasos]</Value>
+      <Goal>0</Goal>
+      <Status>CASE
+ WHEN IsEmpty(KPIValue("KPI Variacion Mensual")) THEN NULL
+ WHEN KPIValue("KPI Variacion Mensual") &lt;= KPIGoal("KPI Variacion Mensual") THEN 1
+ WHEN KPIValue("KPI Variacion Mensual") &lt;= 0.25 THEN 0
+ ELSE -1
+END</Status>
+      <Trend>CASE
+ WHEN IsEmpty([Measures].[CrecimientoMensualCasos]) THEN 0
+ WHEN [Measures].[CrecimientoMensualCasos] &gt; 0.10 THEN 1
+ WHEN [Measures].[CrecimientoMensualCasos] &lt; -0.10 THEN -1
+ ELSE 0
+END</Trend>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Traffic Light</StatusGraphic>
+    </Kpi>
+    <Kpi dwd:design-time-name="9bb6805a-70b5-4fb3-8dac-01bc1a93a8cc">
+      <ID>KPI 4</ID>
+      <Name>KPI Vulnerabilidad</Name>
+      <Value>[Measures].[IndiceVulnerabilidad]</Value>
+      <Goal>([Measures].[IndiceVulnerabilidad],
+ [Dim Pais].[Nombre Pais].DefaultMember,
+ [Dim Pais].[Region].DefaultMember)</Goal>
+      <Status>CASE
+ WHEN IsEmpty(KPIValue("KPI Vulnerabilidad")) THEN NULL
+ WHEN KPIValue("KPI Vulnerabilidad") &lt;= KPIGoal("KPI Vulnerabilidad") THEN 1
+ WHEN KPIValue("KPI Vulnerabilidad") &lt;= KPIGoal("KPI Vulnerabilidad") * 1.25 THEN 0
+ ELSE -1
+END</Status>
+      <TrendGraphic>Standard Arrow</TrendGraphic>
+      <StatusGraphic>Traffic Light</StatusGraphic>
+    </Kpi>
+  </Kpis>
+</Cube>

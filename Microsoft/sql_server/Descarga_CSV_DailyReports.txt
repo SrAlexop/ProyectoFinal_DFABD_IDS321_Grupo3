@@ -1,0 +1,41 @@
+# =========================================================
+# Descarga automatica de los daily_reports del repo JHU CSSE
+# =========================================================
+
+# 1. Configura aqui el rango de fechas que quieres descargar
+$fechaInicio = Get-Date "2020-01-01"
+$fechaFin    = Get-Date "2022-12-31"
+
+# 2. Carpeta local donde se guardaran los CSV
+$carpetaDestino = "C:\Users\LAPTOP\Documents\ALEX\CICLO VI\DFABD\COVID2"
+
+# 3. URL base del repo (rama master, carpeta daily_reports)
+$urlBase = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports"
+
+# Crea la carpeta destino si no existe
+if (-not (Test-Path $carpetaDestino)) {
+    New-Item -ItemType Directory -Path $carpetaDestino | Out-Null
+}
+
+$fechaActual = $fechaInicio
+while ($fechaActual -le $fechaFin) {
+
+    # El repo nombra los archivos como MM-dd-yyyy.csv
+    $nombreArchivo = $fechaActual.ToString("MM-dd-yyyy") + ".csv"
+    $urlArchivo    = "$urlBase/$nombreArchivo"
+    $rutaLocal     = Join-Path $carpetaDestino $nombreArchivo
+
+    Write-Host "Descargando $nombreArchivo ..."
+
+    try {
+        Invoke-WebRequest -Uri $urlArchivo -OutFile $rutaLocal -ErrorAction Stop
+        Write-Host "  OK" -ForegroundColor Green
+    }
+    catch {
+        Write-Host "  No se encontro el archivo (puede que ese dia no exista en el repo)" -ForegroundColor Yellow
+    }
+
+    $fechaActual = $fechaActual.AddDays(1)
+}
+
+Write-Host "Descarga finalizada. Archivos guardados en $carpetaDestino"

@@ -1,0 +1,88 @@
+# =========================================================
+# Descarga y carga filtrada de COVID-19 Data Hub (nivel pais)
+# Filtro: solo paises de Latinoamerica, solo año 2020
+# =========================================================
+ 
+# 1. CONFIGURA AQUI
+$carpetaDestino = "C:\Users\LAPTOP\Documents\ALEX\CICLO VI\DFABD\HUB" #Poner la carpeta donde se van a alojar los archivos
+$urlDescarga    = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/owid-covid-data.csv"
+$archivoCSVDestino = "$carpetaDestino\owid-covid-data.csv"
+ 
+$servidor  = "localhost"
+$baseDatos = "COVID_Staging"
+$tabla     = "stg.DataHub_Indicadores_Raw"
+ 
+$paisesLatinoamerica = @(
+    "Argentina","Bolivia","Brazil","Chile","Colombia","Costa Rica","Cuba",
+    "Dominican Republic","Ecuador","El Salvador","Guatemala","Haiti",
+    "Honduras","Mexico","Nicaragua","Panama","Paraguay","Peru","Uruguay","Venezuela"
+)
+ 
+# 2. Descarga 
+if (-not (Test-Path $carpetaDestino)) {
+    New-Item -ItemType Directory -Path $carpetaDestino | Out-Null
+}
+ 
+Write-Host "Descargando datos de Our World in Data (puede tardar, el archivo es grande)..." -ForegroundColor Cyan
+Invoke-WebRequest -Uri $urlDescarga -OutFile $archivoCSVDestino
+ 
+$archivoCSV = Get-Item $archivoCSVDestino
+Write-Host "Archivo descargado: $($archivoCSV.FullName)" -ForegroundColor Green
+ 
+# 3. Lee el CSV completo 
+Write-Host "Leyendo y filtrando..." -ForegroundColor Cyan
+$datos = Import-Csv -Path $archivoCSV.FullName
+ 
+# Filtro: solo Latinoamerica y solo año 2020
+$datosFiltrados = $datos | Where-Object {
+    ($paisesLatinoamerica -contains $_.location) -and
+    (($_.date -like "2020-*") -or ($_.date -like "2021-*") -or ($_.date -like "2022-*"))
+}
+ 
+Write-Host "Filas totales en el archivo: $($datos.Count)"
+Write-Host "Filas despues del filtro: $($datosFiltrados.Count)" -ForegroundColor Green
+ 
+if ($datosFiltrados.Count -eq 0) {
+    Write-Host "No hay filas para cargar. Revisa los nombres de columna del CSV (puede que hayan cambiado)." -ForegroundColor Red
+    Write-Host "Columnas disponibles en el archivo:"
+    ($datos | Select-Object -First 1).PSObject.Properties.Name
+    exit
+}
+ 
+# 4. Arma la tabla en memoria con las columnas que necesitamos
+$tablaMemoria = New-Object System.Data.DataTable
+$columnasDestino = @("Fecha","Pais","IsoAlpha3","Poblacion","DiabetesPrevalence","ExtremePoverty","CardiovascDeathRate","HandwashingFacilities","GdpPerCapita")
+foreach ($col in $columnasDestino) {
+    $tablaMemoria.Columns.Add($col, [string]) | Out-Null
+}
+$tablaMemoria.Columns.Add("NombreArchivoOrigen", [string]) | Out-Null
+ 
+foreach ($fila in $datosFiltrados) {
+    $nuevaFila = $tablaMemoria.NewRow()
+    $nuevaFila["Fecha"]                 = $fila.date
+    $nuevaFila["Pais"]                  = $fila.location
+    $nuevaFila["IsoAlpha3"]             = $fila.iso_code
+    $nuevaFila["Poblacion"]             = $fila.population
+    $nuevaFila["DiabetesPrevalence"]    = $fila.diabetes_prevalence
+    $nuevaFila["ExtremePoverty"]        = $fila.extreme_poverty
+    $nuevaFila["CardiovascDeathRate"]   = $fila.cardiovasc_death_rate
+    $nuevaFila["HandwashingFacilities"] = $fila.handwashing_facilities
+    $nuevaFila["GdpPerCapita"]          = $fila.gdp_per_capita
+    $nuevaFila["NombreArchivoOrigen"]   = $archivoCSV.Name
+    $tablaMemoria.Rows.Add($nuevaFila)
+}
+ 
+# 5. Sube a SQL Server
+Write-Host "Subiendo a SQL Server..." -ForegroundColor Cyan
+ 
+$connString = "Server=$servidor;Database=$baseDatos;Integrated Security=True;TrustServerCertificate=True;"
+$conexion = New-Object System.Data.SqlClient.SqlConnection($connString)
+$conexion.Open()
+ 
+$bulkCopy = New-Object System.Data.SqlClient.SqlBulkCopy($conexion)
+$bulkCopy.DestinationTableName = $tabla
+$bulkCopy.WriteToServer($tablaMemoria)
+ 
+$conexion.Close()
+ 
+Write-Host "Listo. $($datosFiltrados.Count) filas cargadas en $tabla" -ForegroundColor Green

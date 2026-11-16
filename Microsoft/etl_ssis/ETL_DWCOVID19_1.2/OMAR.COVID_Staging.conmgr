@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OMAR.COVID_Staging"
+  DTS:DTSID="{54677829-B5F1-4BA6-8E6A-E9CC603B1944}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=OMAR;Initial Catalog=COVID_Staging;Integrated Security=True;TrustServerCertificate=True;Application Name=SSIS-{54677829-B5F1-4BA6-8E6A-E9CC603B1944}OMAR.COVID_Staging;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,85 @@
+# =========================================================
+# Carga automatica de CSV a SQL Server usando SqlBulkCopy
+# No requiere xp_cmdshell ni permisos especiales del
+# servicio de SQL Server, porque el archivo lo lee
+# PowerShell directamente (con TUS permisos de usuario).
+# =========================================================
+
+# 1. CONFIGURA AQUI tus datos de conexion
+$servidor   = "localhost"               
+$baseDatos  = "COVID_Staging"
+$tabla      = "stg.DailyReports_Raw"
+$carpetaCSV = "C:\Users\LAPTOP\Documents\ALEX\CICLO VI\DFABD\COVID2" #Cambiar a la carpeta donde guardaron los CSV
+
+# Cadena de conexion (Windows Authentication)
+$connString = "Server=$servidor;Database=$baseDatos;Integrated Security=True;TrustServerCertificate=True;"
+
+# 2. Toma todos los archivos CSV de la carpeta
+$archivos = Get-ChildItem -Path $carpetaCSV -Filter "*.csv"
+
+if ($archivos.Count -eq 0) {
+    Write-Host "No se encontraron archivos CSV en $carpetaCSV" -ForegroundColor Red
+    exit
+}
+
+Write-Host "Se encontraron $($archivos.Count) archivos para cargar." -ForegroundColor Cyan
+
+foreach ($archivo in $archivos) {
+
+    Write-Host "Procesando: $($archivo.Name) ..."
+
+    try {
+        # Lee el CSV completo como texto (todas las columnas quedan como string)
+        $datos = Import-Csv -Path $archivo.FullName
+
+        if ($datos.Count -eq 0) {
+            Write-Host "  Archivo vacio, se omite." -ForegroundColor Yellow
+            continue
+        }
+
+        # Crea una tabla en memoria (DataTable) con las mismas columnas del CSV
+        $tablaMemoria = New-Object System.Data.DataTable
+
+        # Columnas fijas que necesitamos en destino, ademas de las del CSV
+        $columnasDestino = @("FIPS","Admin2","Province_State","Country_Region","Last_Update",
+                              "Lat","Long_","Confirmed","Deaths","Recovered","Active",
+                              "Combined_Key","Incident_Rate","Case_Fatality_Ratio")
+
+        foreach ($col in $columnasDestino) {
+            $tablaMemoria.Columns.Add($col, [string]) | Out-Null
+        }
+        $tablaMemoria.Columns.Add("NombreArchivoOrigen", [string]) | Out-Null
+
+        # Llena la tabla en memoria fila por fila
+        foreach ($fila in $datos) {
+            $nuevaFila = $tablaMemoria.NewRow()
+            foreach ($col in $columnasDestino) {
+                # Si el CSV no tiene esa columna (formatos antiguos varian), deja NULL
+                if ($fila.PSObject.Properties.Name -contains $col) {
+                    $nuevaFila[$col] = $fila.$col
+                } else {
+                    $nuevaFila[$col] = [DBNull]::Value
+                }
+            }
+            $nuevaFila["NombreArchivoOrigen"] = $archivo.Name
+            $tablaMemoria.Rows.Add($nuevaFila)
+        }
+
+        # Conecta y vuelca los datos con SqlBulkCopy (rapido, en bloque)
+        $conexion = New-Object System.Data.SqlClient.SqlConnection($connString)
+        $conexion.Open()
+
+        $bulkCopy = New-Object System.Data.SqlClient.SqlBulkCopy($conexion)
+        $bulkCopy.DestinationTableName = $tabla
+        $bulkCopy.WriteToServer($tablaMemoria)
+
+        $conexion.Close()
+
+        Write-Host "  OK - $($datos.Count) filas cargadas." -ForegroundColor Green
+    }
+    catch {
+        Write-Host "  ERROR: $($_.Exception.Message)" -ForegroundColor Red
+    }
+}
+
+Write-Host "Proceso de carga finalizado."

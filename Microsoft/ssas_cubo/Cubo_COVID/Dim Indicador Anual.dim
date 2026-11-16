@@ -1,0 +1,274 @@
+﻿<Dimension xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="3a389c87-2326-446a-b24c-7c1774364e7a" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Dim Indicador Anual</ID>
+  <Name>Dim Indicador Anual</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+      <Value>
+        <dds xmlns="">
+          <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="2" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-827" scrolltop="-2779" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="6562" y="12621" backcolor="2039583" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+            <font>
+              <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+            </font>
+            <mouseicon>
+              <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+            </mouseicon>
+          </diagram>
+          <layoutmanager>
+            <ddsxmlobj />
+          </layoutmanager>
+          <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge" tooltip="DimIndicadorAnual" left="20" top="0" logicalid="1" controlid="1" masterid="0" hint1="0" hint2="0" width="4868" height="4842" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+            <control>
+              <ddsxmlobjectstreaminitwrapper binary="000e000004130000ea120000" />
+            </control>
+            <layoutobject>
+              <ddsxmlobj>
+                <property name="LogicalObject" value="dbo_DimIndicadorAnual" vartype="8" />
+              </ddsxmlobj>
+            </layoutobject>
+            <shape groupshapeid="0" groupnode="0" />
+          </ddscontrol>
+        </dds>
+      </Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>-827</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>-2779</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>20</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="213555f9-265f-4225-8523-4512e2b5047a">
+    <DataSourceViewID>COVID DW</DataSourceViewID>
+  </Source>
+  <ErrorConfiguration dwd:design-time-name="d14df127-4d9f-4987-96f9-ffd66ec32611">
+    <KeyNotFound>ReportAndStop</KeyNotFound>
+    <KeyDuplicate>ReportAndStop</KeyDuplicate>
+    <NullKeyNotAllowed>ReportAndStop</NullKeyNotAllowed>
+  </ErrorConfiguration>
+  <CurrentStorageMode>Molap</CurrentStorageMode>
+  <Attributes>
+    <Attribute dwd:design-time-name="793aaa6b-e305-430b-84e1-0016d3907f1a">
+      <ID>Indicador Anual Key</ID>
+      <Name>Indicador Anual Key</Name>
+      <Usage>Key</Usage>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="197b1971-173c-45d4-a1b9-3c233f69879c">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a0a43b3a-b6b2-4c35-98a7-84a298d27e38">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>IndicadorAnualKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <AttributeRelationships>
+        <AttributeRelationship dwd:design-time-name="a5ea4f90-4ceb-4d58-97c1-fcc8387c0b27">
+          <AttributeID>Indicador Anual Key 1</AttributeID>
+          <Name>Indicador Anual Key 1</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="b10805de-2426-44ef-a9a5-56e39ee76fc3">
+          <AttributeID>Nombre Pais</AttributeID>
+          <Name>Nombre Pais</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="45fccc7a-7e62-4b0f-b7e0-0ab2068024a3">
+          <AttributeID>Anio</AttributeID>
+          <Name>Anio</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="43343123-3109-4fdf-b77a-b2fd306187b8">
+          <AttributeID>Poblacion</AttributeID>
+          <Name>Poblacion</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="246f2e1e-fbc4-4e1a-baa4-71b81b17e2cb">
+          <AttributeID>Pib Per Capita</AttributeID>
+          <Name>Pib Per Capita</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="f3219ec1-6942-4398-93de-d100a4b09b16">
+          <AttributeID>Prevalencia Diabetes</AttributeID>
+          <Name>Prevalencia Diabetes</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="4accbd11-d8ce-4f75-9ec3-879bed244f31">
+          <AttributeID>Extrema Pobreza</AttributeID>
+          <Name>Extrema Pobreza</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="72e11feb-6d1f-4323-88cb-a06382376d1b">
+          <AttributeID>Tasa Muerte Cardiovasculares</AttributeID>
+          <Name>Tasa Muerte Cardiovasculares</Name>
+        </AttributeRelationship>
+        <AttributeRelationship dwd:design-time-name="18364adb-db82-4e1f-b7e2-db17a8baef42">
+          <AttributeID>Facilidades Lavado Manos</AttributeID>
+          <Name>Facilidades Lavado Manos</Name>
+        </AttributeRelationship>
+      </AttributeRelationships>
+      <OrderBy>Key</OrderBy>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f10a0703-8c5f-445c-a280-f0364bb5fa68">
+      <ID>Indicador Anual Key 1</ID>
+      <Name>Indicador Anual Key 1</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="65471111-f490-4e2d-9d8e-4085ed653abf">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="de8367b5-0dae-4bfb-b7a9-c20560a14fc9">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>IndicadorAnualKey</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="66a6ab04-0502-41d4-ab44-271e83219c02">
+      <ID>Nombre Pais</ID>
+      <Name>Nombre Pais</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="6edd9dce-d4c6-4762-a041-414fcac27ac6">
+          <DataType>WChar</DataType>
+          <DataSize>200</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a3913111-445c-4366-835b-ccc80454fd81">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>NombrePais</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="192bb382-62f1-40a2-af72-82fddad6f735">
+      <ID>Anio</ID>
+      <Name>Anio</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="3e51fa30-f57f-482a-ac4d-7fe4b4df5f8a">
+          <DataType>Integer</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="c3394be4-596e-4e20-a0c9-75cc4d8ce61b">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>Anio</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f92674f5-fd01-4935-80d6-f975296dee40">
+      <ID>Poblacion</ID>
+      <Name>Poblacion</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="2932a2a8-295a-4855-a29d-5462ecfdcbff">
+          <DataType>BigInt</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="59444096-c27e-490e-b1b7-6d18302070db">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>Poblacion</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="8fd92d5a-57d3-4cae-b662-4fdb4399b280">
+      <ID>Pib Per Capita</ID>
+      <Name>Pib Per Capita</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1e8e5028-3d13-4828-9ffb-13784233c0ac">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="b07d51b0-610d-418c-b479-67272a1a7fdb">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>PibPerCapita</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="45c04948-c013-4565-a917-6f361d00280a">
+      <ID>Prevalencia Diabetes</ID>
+      <Name>Prevalencia Diabetes</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="04412680-e8b5-4aef-bdda-e1633d1bce65">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="8288c794-ab21-4ff8-acc5-b3deb3bd7442">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>PrevalenciaDiabetes</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="c7ae5351-f5a6-4e58-b6bb-e2ee675a3a83">
+      <ID>Extrema Pobreza</ID>
+      <Name>Extrema Pobreza</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="0d06aa61-6762-4fe3-b931-b3ae0de062a0">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9d07710e-2846-4007-9e4d-83bb93925dce">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>ExtremaPobreza</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="2a0c43e2-8a1f-4abc-aeb0-109852317623">
+      <ID>Tasa Muerte Cardiovasculares</ID>
+      <Name>Tasa Muerte Cardiovasculares</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="8a51ecc7-4403-478d-a0fd-6dd76a9f8152">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="cbc9a3c0-ccee-443e-afaf-f6b94e1157ca">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>TasaMuerteCardiovasculares</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+    <Attribute dwd:design-time-name="f0f83eb9-7c70-43c5-9d3f-d1e365ff4689">
+      <ID>Facilidades Lavado Manos</ID>
+      <Name>Facilidades Lavado Manos</Name>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="9a1d4754-ffcc-43cb-b353-35879b2e9d68">
+          <DataType>Double</DataType>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5cb54322-19f3-4e67-b608-5f4bdfa1bff1">
+            <TableID>dbo_DimIndicadorAnual</TableID>
+            <ColumnID>FacilidadesLavadoManos</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+      <ddl200:ProcessingState>Unprocessed</ddl200:ProcessingState>
+      <ddl300:AttributeHierarchyProcessingState>Unprocessed</ddl300:AttributeHierarchyProcessingState>
+    </Attribute>
+  </Attributes>
+  <ddl300:ProcessingState>Unprocessed</ddl300:ProcessingState>
+</Dimension>
