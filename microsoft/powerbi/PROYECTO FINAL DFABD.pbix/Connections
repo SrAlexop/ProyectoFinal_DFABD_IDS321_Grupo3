@@ -1,0 +1,1 @@
+{"Version":1,"Connections":[{"Name":"EntityDataSource","ConnectionString":"Data Source=DESKTOP-7UN0H2K\\MSSQLSERVER_25;Initial Catalog=Cubo_COVID;Cube=\"COVID DW\"","IsMultiDimensional":true,"ConnectionType":"analysisServicesDatabaseLive"}]}
